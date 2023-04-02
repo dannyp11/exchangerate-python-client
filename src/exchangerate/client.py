@@ -9,9 +9,9 @@ class ExchangerateClient:
     """
     Primary client class
     """
-    def __init__(self, base_currency="USD", region=Region.AMERICA):
+    def __init__(self, base_currency="USD", server_region=Region.AMERICA):
         self.base_currency = base_currency
-        self.region = region
+        self.server_region = server_region
         self.session = requests.Session()
 
     # -------------------------------------------------------------------
@@ -19,7 +19,24 @@ class ExchangerateClient:
     # -------------------------------------------------------------------
 
     def symbols(self):
+        """
+        Get list of supported symbols
+        """
         url = self._build_url(path="symbols")
+        resp_json = self._validate_and_get_json(url)
+        return resp_json.get("rates")
+
+    def latest(self, symbols=None, amount=1):
+        """
+        Get latest rate
+
+        @param symbols:     list of currencies
+        @param amount:      the currency amount
+        """
+        params = {"amount": amount}
+        if symbols: params["symbols"] = ",".join(symbols)
+
+        url = self._build_url(path="latest", params=params)
         resp_json = self._validate_and_get_json(url)
         return resp_json.get("rates")
 
@@ -47,7 +64,7 @@ class ExchangerateClient:
         return urlunparse(
             Components(
                 scheme='https',
-                netloc=self.region.value,
+                netloc=self.server_region.value,
                 query=urlencode(params),
                 path=path,
                 url="/",

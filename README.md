@@ -14,6 +14,13 @@ client = exchangerate.ExchangerateClient()
 print(client.symbols())
 ```
 
+- Get latest rates
+```
+import exchangerate
+client = exchangerate.ExchangerateClient()
+print(client.latest())
+```
+
 ## Configuration
 - 
 
