@@ -4,7 +4,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='exchangerate-python',
+    name='exchangerate-client',
     author='Daniel Pham',
     author_email='tdpham1105@yahoo.com',
     description='Unofficial exchangerate.host python client library',

@@ -14,11 +14,16 @@ class ExchangerateClient:
         self.region = region
         self.session = requests.Session()
 
+    # -------------------------------------------------------------------
+    # Public methods
+    # -------------------------------------------------------------------
+
     def symbols(self):
         url = self._build_url(path="symbols")
         resp_json = self._validate_and_get_json(url)
         return resp_json.get("rates")
 
+    # -------------------------------------------------------------------
     def _validate_and_get_json(self, url):
             resp = self.session.get(url)
             if resp.status_code != 200:
