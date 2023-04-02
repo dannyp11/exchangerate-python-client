@@ -1,5 +1,7 @@
 # Introduction
-This is unofficial https://exchangerate.host (https://github.com/Formicka/exchangerate.host) python client library
+This is unofficial [exchangerate.host](https://github.com/Formicka/exchangerate.host) python client library.
+
+exchangerate.host is a simple and lightweight free service for current and historical foreign exchange rates & crypto exchange rates.
 
 # Getting started
 
@@ -20,9 +22,6 @@ import exchangerate
 client = exchangerate.ExchangerateClient()
 print(client.latest())
 ```
-
-## Configuration
-- 
 
 # Development guide
 ## Testing
