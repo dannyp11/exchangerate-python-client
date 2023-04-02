@@ -11,12 +11,12 @@ setuptools.setup(
     keywords='exchangerate.host, exchangerate, client',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/dannyp11/exchangerate-python',
+    url='https://github.com/dannyp11/exchangerate-python-client',
     project_urls={
-        'Documentation': 'https://github.com/dannyp11/exchangerate-python',
+        'Documentation': 'https://github.com/dannyp11/exchangerate-python-client',
         'Bug Reports':
-        'https://github.com/dannyp11/exchangerate-python/issues',
-        'Source Code': 'https://github.com/dannyp11/exchangerate-python',
+        'https://github.com/dannyp11/exchangerate-python-client/issues',
+        'Source Code': 'https://github.com/dannyp11/exchangerate-python-client',
         # 'Funding': '',
         # 'Say Thanks!': '',
     },
