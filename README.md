@@ -4,7 +4,7 @@ This is unofficial https://exchangerate.host (https://github.com/Formicka/exchan
 # Getting started
 
 ## Installation
-- Using pip `pip install exchangerate-client
+- Using pip `pip install exchangerate-client`
 
 ## Usage
 - Get all currency symbols
