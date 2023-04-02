@@ -4,7 +4,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='exchangerate-python',
+    name='exchangerate-client',
     author='Daniel Pham',
     author_email='tdpham1105@yahoo.com',
     description='Unofficial exchangerate.host python client library',
@@ -39,7 +39,7 @@ setuptools.setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',
-    # install_requires=['Pillow'],
+    install_requires=['requests'],
     extras_require={
         'dev': ['check-manifest'],
         # 'test': ['coverage'],
