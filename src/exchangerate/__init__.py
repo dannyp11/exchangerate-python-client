@@ -1,4 +1,3 @@
-__version__ = "0.1.2"
+__version__ = "0.2.0"
 
-from .config import Region
 from .client import ExchangerateClient
