@@ -8,8 +8,9 @@ class ExchangerateClient:
     Primary client class
     @param api_key: the api key from https://apilayer.com/marketplace/fixer-api#documentation-tab
     """
-    def __init__(self, api_key: str):
+    def __init__(self, api_key: str, timeout=None):
         self.api_key = api_key
+        self.timeout = timeout or 10
         self.session = requests.Session()
 
     # -------------------------------------------------------------------
@@ -43,7 +44,7 @@ class ExchangerateClient:
     # -------------------------------------------------------------------
     def _validate_and_get_json(self, url):
             headers = {"apikey": self.api_key}
-            resp = self.session.get(url, headers=headers)
+            resp = self.session.get(url, headers=headers, timeout=self.timeout)
             if resp.status_code != 200:
                 raise ResponseErrorException("Status code=%d calling url=%s" % (resp.status_code, url))
 
